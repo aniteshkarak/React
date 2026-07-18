@@ -1,9 +1,12 @@
+import Time4code from "./annith";
+
 function App(){
   return (
-    <div>
-      <h1>Hello React</h1>
-      <h1>By code Step by step</h1>
-    </div>
+    <>
+      <Time4code/>
+      <h4>Subscribe Time4code YT Channel</h4>
+      <h6>Follow Me and connect me in InstaGram- @time4code</h6>
+    </>
   );
 }
 
