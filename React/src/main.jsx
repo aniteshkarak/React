@@ -14,14 +14,8 @@ const element = (
   <a href="https://bharatpg.site" target='_blank'>Visit Best Pg in KGP</a>
 )
 
-const reactElement = React.createElement(
-  'a',
-  {href: 'https://bharatpg.site', target: '_blank'},
-  'click Me to visit'
-)
-
 createRoot(document.getElementById('root')).render(
   
-  reactElement
+    <App />
   
 )
