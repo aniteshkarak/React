@@ -5,24 +5,30 @@ import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  let [counter, setCounter] = useState(15)
+  let [counter, setCounter] = useState(10)
 
   // let counter = 15
 
   const addvalue = () => {
-    counter +=1
-    setCounter(counter)
+    if(counter <20){
+      counter +=1
+      setCounter(counter)
+    }
   }
   const removeValue = () => {
-    setCounter(counter - 1)
+    if (counter >0){
+      setCounter(counter - 1)
+    }
   }
 
   return (
     <>
       <h1>Time4Code</h1>
       <h2>Counter Value: {counter}</h2>
-    <br />
+      <br />
+      <br />
       <button onClick={addvalue} >Add Value {counter}</button>
+      <br />
       <button onClick={removeValue}>Remove Value {counter}</button>
     </>
   )
