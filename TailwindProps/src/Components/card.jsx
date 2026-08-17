@@ -1,6 +1,9 @@
 import React from "react";
 
-function Card(){
+function Card({username,btnText="Visit Again"}){
+  // console.log("props",props);
+  // console.log(props.username);
+  console.log(username);
     return(
         <div className="relative h-[400px] w-[300px] rounded-b-md m-5">
         <img 
@@ -10,10 +13,10 @@ function Card(){
         />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
         <div className="absolute bottom-4 left-4 text-left">
-          <h1 className="text-lg font-semibold text-white">AirMax Pro</h1>
+          <h1 className="text-lg font-semibold text-white">{username}</h1>
           <p className="mt-2 text-sm text-gray-300">Experience the future of running with our latest innovation.</p>
           <button className="mt-2 inline-flex cursor-pointer items-center text-sm font-semibold text-white">
-            Learn More
+            {btnText}
           </button>
         </div>
 
