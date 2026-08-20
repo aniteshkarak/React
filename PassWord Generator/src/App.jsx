@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from './assets/vite.svg'
 // import heroImg from './assets/hero.png'
@@ -9,6 +9,9 @@ function App() {
   const [numAllowed, setNumAllowed] = useState(false)
   const [charAllowed, setCharAllowed] = useState(false)
   const[password, setPassword] = useState("")
+
+ //UseRef Hook
+ const passwordRef = useRef(null)
 
   const passwordGenerator = useCallback(() => {
     let pass = ""
@@ -28,6 +31,15 @@ function App() {
     setPassword(pass)
 
   }, [length, numAllowed, charAllowed, setPassword])
+
+  const copyPasswordToClipboard = useCallback(() => {
+    passwordRef.current?.select()
+    window.navigator.clipboard.writeText(password)
+  }, [password])
+
+  useEffect(() => {
+    passwordGenerator()
+  }, [length, numAllowed, charAllowed, passwordGenerator])
 
   return (
     <>
@@ -78,7 +90,7 @@ function App() {
 
 
       <div className=" w-full max-w-md mx-auto my-8 px-6 py-6 rounded-2xl
-        bg-gradient-to-br from-gray-800 via-gray-900 to-gray-950
+        bg-gradient-to-r from-gray-800 via-gray-900 to-gray-950
         border border-gray-700 shadow-2xl shadow-black/40 ">
 
         {/* ===== TITLE ===== */}
@@ -95,10 +107,12 @@ function App() {
             className=" outline-none w-full py-3 px-4 text-white bg-transparent placeholder-gray-500 font-mono text-sm tracking-wider"
             placeholder="Generated password"
             readOnly
+            ref={passwordRef}
           />
 
           {/* COPY BUTTON */}
           <button
+            onClick={copyPasswordToClipboard}
             className=" outline-none px-5 py-2 shrink-0 text-white font-bold text-sm bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 active:scale-95 transition-all duration-200 shadow-lg ">
             COPY
           </button>
