@@ -15,7 +15,7 @@ function Github() {
     }, []);
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-950 via-gray-900 to-gray-800 px-4">
+        <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-gray-950 via-gray-900 to-gray-800 px-4">
 
             <div className="w-full max-w-md rounded-3xl border border-gray-700 bg-gray-900/80 p-8 text-white shadow-2xl backdrop-blur-md">
 
