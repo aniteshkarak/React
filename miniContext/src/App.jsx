@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import UserContextProvider from './Context/UserContextProvider'
+import Login from './Component/Login'
+import Profile from './Component/Profile'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -8,6 +10,8 @@ function App() {
   return (
     <UserContextProvider>
       <h1>React with Anitesh</h1>
+      <Login />
+      <Profile />
     </UserContextProvider>
   )
 }
