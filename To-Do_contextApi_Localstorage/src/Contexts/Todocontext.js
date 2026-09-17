@@ -5,17 +5,17 @@ export const TodoContext = createContext({
     Todos:[
         {
             id:1,
-            title:"Learn React",
+            todo:"Learn React",
             completed:false
         }
     ],
     addTodo: (todo) => {},
     updateTodo: (id, todo) => {},
     deleteTodo: (id) => {},
-    toggleCompleted: (id) => {},
+    toggleComplete: (id) => {},
 })
 
-export const UseToDo = () =>{
+export const useTodo = () =>{
     return useContext(TodoContext)
 }
 
