@@ -88,8 +88,19 @@ function Todos() {
                                         autoFocus
                                     />
                                 ) : (
-                                    <div className="text-white font-medium truncate">
-                                        {todo.text}
+                                    <div className="min-w-0">
+                                        <div className="text-white font-medium truncate">
+                                            {todo.text}
+                                        </div>
+                                        <div className="text-xs text-zinc-500 mt-1">
+                                            {new Date(todo.createdAt).toLocaleString("en-IN", {
+                                                day: "2-digit",
+                                                month: "short",
+                                                year: "numeric",
+                                                hour: "2-digit",
+                                                minute: "2-digit",
+                                            })}
+                                        </div>
                                     </div>
                                 )}
                             </div>
